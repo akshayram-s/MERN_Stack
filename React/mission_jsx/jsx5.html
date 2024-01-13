@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css" />
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var h1 = (
+          <h1></h1> // <h1 className={[btn btn-primary bg-dark]}>Hello React</h1>
+        );
+        var superman = document.getElementById("superman");
+        ReactDOM.render(h1, superman);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

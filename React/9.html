@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var obj = {
+          style: { color: "red" },
+          onClick: () => {
+            alert("hello");
+          },
+        };
+        var names = [
+          { fname: "Sachin", lname: "Tendulkar" },
+          { fname: "Virat", lname: "Kohli" },
+          { fname: "Rahul", lname: "Dravid" },
+        ];
+        function getTable(names) {
+          var elements = <div>{names.map((el) => getTr(el))}</div>;
+          return <table>{elements}</table>;
+        }
+        function getTr(el) {
+          var name1 = getTd(el.fname);
+          var name2 = getTd(el.lname);
+          var name = [name1, name2];
+          return <tr>{name}</tr>;
+        }
+        function getTd(item) {
+          return <td>{item}</td>;
+        }
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(getTable(names));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+    <div id="spider"></div>
+  </body>
+</html>

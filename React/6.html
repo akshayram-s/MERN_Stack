@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script>
+      window.onload = function () {
+        var obj = {
+          style: { color: "red" },
+          onClick: () => {
+            alert("hello");
+          },
+        };
+        var names = ["Abi", "Paul", "JP"];
+        var h1 = React.createElement("h1", obj, "Hello " + names[0]);
+        var h2 = React.createElement("h1", obj, "Hello " + names[1]);
+        var h3 = React.createElement("h1", obj, "Hello " + names[2]);
+        var div = React.createElement("h1", null, [h1, h2, h3]);
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(div);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

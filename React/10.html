@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script>
+      window.onload = function () {
+        var obj = {
+          style: { color: "red" },
+          onClick: () => {
+            alert("hello");
+          },
+        };
+        var names = ["Abi", "Paul", "JP"];
+        function getUl(names) {
+          var elements = names.map((el) => getLi(el));
+          return React.createElement("ul", null, elements);
+        }
+        function getLi(el) {
+          return React.createElement("li", obj, el);
+        }
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(getUl(names));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="superman"></div>
+  </body>
+</html>

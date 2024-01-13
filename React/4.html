@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var obj = {
+          style: { color: "red" },
+          onClick: () => {
+            alert("hello");
+          },
+        };
+        var obj2 = {
+          style: { color: "black" },
+        };
+        var fruits = ["Apple", "Orange", "Banana"];
+        /*var h1 = React.createElement("h1", obj, "Hello React");
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(h1);
+        */
+        var div = (
+          <ol>
+            {fruits.map((el) => (
+              <li>{el}</li>
+            ))}
+          </ol>
+        );
+        ReactDOM.render(div, superman);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+    <div id="list"></div>
+  </body>
+</html>

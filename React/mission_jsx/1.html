@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        /*var h1 = React.createElement(
+          "h1",
+          {
+            style: { color: "red" },
+          },
+          "Hello React"
+        );
+          */
+        var h1 = <h1>Hello React</h1>;
+        console.log(h1);
+        ReactDOM.render(h1, document.getElementById("superman"));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

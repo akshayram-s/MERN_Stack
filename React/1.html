@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+      window.onload = function () {
+        var h1 = React.createElement(
+          "h1",
+          {
+            style: { color: "red" },
+          },
+          "Hello React"
+        );
+        //first parameter : tag name
+        //second parameter : style
+        //third parameter : child node
+        ReactDOM.render(h1, document.getElementById("superman"));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

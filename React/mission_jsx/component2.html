@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js
+"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        function Person(props) {
+          var el = props.person;
+          var onRemove = props.onRemove;
+          return (
+            <div className="card" style={{ width: "18rem" }}>
+              <img
+                className="card-img-top"
+                src={el.image}
+                alt="Card image cap"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{el.fname + " " + el.lname}</h5>
+                <p className="card-text">email:{el.email}</p>
+                <p className="card-text">mobile:{el.mobile}</p>
+                <p className="card-text">skills:{el.skills.join(",")}</p>
+                <button
+                  href="#"
+                  onClick={() => onRemove(el.id)}
+                  className="btn btn-primary"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          );
+        }
+        function PersonList() {
+          var [arr, setArr] = React.useState([
+            {
+              id: 1,
+              image: "image.jpeg.jpg",
+              fname: "Sachin",
+              lname: "Tendulkar",
+              email: "sachin2icc.com",
+              mobile: "1233211234",
+              skills: ["HTML", "CSS", "JS", "ReactJS"],
+            },
+            {
+              id: 2,
+              image: "profile.png",
+              fname: "Saurav",
+              lname: "Ganguly",
+              email: "saurav2icc.com",
+              mobile: "1233211234",
+              skills: ["HTML", "CSS", "JS", "ReactJS"],
+            },
+            {
+              id: 3,
+              image: "homeim.png",
+              fname: "Rahul",
+              lname: "Dravid",
+              email: "rahul2icc.com",
+              mobile: "1233211234",
+              skills: ["HTML", "CSS", "JS", "ReactJS"],
+            },
+          ]);
+
+          var handleRemove = (id) => {
+            alert("removing " + id);
+            setArr(arr.filter((el) => el.id != id));
+          };
+          var handleSort = () => {
+            alert("sorting");
+            let newArr = [...arr].sort((a, b) => {
+              if (a.fname == b.fname) return 0;
+              else if (a.fname > b.fname) return 1;
+              return -1;
+            });
+            setArr(newArr);
+          };
+          return (
+            <div>
+              <button onClick={handleSort} className="btn btn-primary">
+                Sort
+              </button>
+              <div>
+                {arr.map((el) => (
+                  <Person person={el} onRemove={handleRemove} />
+                ))}
+              </div>
+            </div>
+          );
+        }
+        var root = ReactDOM.createRoot(document.getElementById("superman"));
+        root.render(<PersonList />);
+      };
+      /*
+      Advantages of React:
+      1)VDOM
+      2)State management
+      */
+    </script>
+  </head>
+  <body>
+    <div class="container" id="superman"></div>
+  </body>
+</html>

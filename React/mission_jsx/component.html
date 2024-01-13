@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css" />
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        function Person(props) {
+          var el = props.person;
+          var onRemove = props.onRemove;
+          return (
+            <div className="card" style={{ width: "18rem" }}>
+              <img
+                className="card-img-top"
+                src={el.sc}
+                alt="Card image cap"
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">
+                  Firstname:{el.fname} Lastname:{el.lname}
+                </h5>
+                <p className="card-text">age:{el.age}</p>
+                <button
+                  href="#"
+                  onClick={() => onRemove(el.fname)}
+                  className="btn btn-primary"
+                >
+                  {" "}
+                  REMOVE{" "}
+                </button>
+              </div>
+            </div>
+          );
+        }
+        function PersonList() {
+          var [arr, setArr] = React.useState([
+            { sc: "profile.png", fname: "Jonathan", lname: "paul", age: 19 },
+            { sc: "image.jpeg.jpg", fname: "Jack", lname: "Sparrow", age: 28 },
+            { sc: "homeim.png", fname: "Jack", lname: "Eben", age: 18 },
+          ]);
+          //put the array of objects inside React.useState and spread to two variables.
+          var handleRemove = (fname) => {
+            alert("removing element");
+            setArr(arr.filter((el) => el.fname != fname));
+          };
+
+          return arr.map((el) => (
+            <Person person={el} onRemove={handleRemove} />
+          ));
+        }
+
+        var root = ReactDOM.createRoot(document.getElementById("superman"));
+        root.render(<PersonList />);
+      };
+      //if we pass parameter to function in event binding we should put it inside anonymous function.
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

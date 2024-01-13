@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var obj = {
+          color: "blue",
+          backgroundColor: "black",
+          textAlign: "center",
+          onClick: () => alert("Clicked!!"),
+        };
+        var h1 = <h1 {...obj}>Hello React</h1>;
+
+        ReactDOM.render(h1, document.getElementById("superman"));
+        //we should only give the function name as we are giving value to function not calling it.
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+    <div id="para"></div>
+  </body>
+</html>

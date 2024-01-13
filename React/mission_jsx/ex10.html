@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var arr = [
+          { sc: "profile.png", fname: "Jonathan", lname: "paul", age: 19 },
+          { sc: "image.jpeg", fname: "Jack", lname: "Sparrow", age: 28 },
+          { sc: "homeim.png", fname: "Jack", lname: "Eben", age: 18 },
+        ];
+
+        var div = (
+          <div>
+            {arr.map((ele) => {
+              return (
+                <div style={{ border: "3px solid black", marginTop: "2%" }}>
+                  <img src={ele.sc} height="300px" width="300px"></img>
+                  <h1>FName:{ele.fname}</h1>
+                  <h1>LName:{ele.lname}</h1>
+                  <h1>AGE:{ele.age}</h1>
+                </div>
+              );
+            })}
+          </div>
+        );
+
+        ReactDOM.render(div, superman);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script>
+      window.onload = function () {
+        var obj = {
+          style: { color: "red" },
+          onClick: () => {
+            alert("hello");
+          },
+        };
+        var h1 = React.createElement(
+          "h1",
+          { style: { color: "blue" } },
+          "NAMES"
+        );
+        var header = document.getElementById("header");
+        var r = ReactDOM.createRoot(header);
+        r.render(h1);
+        var names = ["Abi", "Paul", "JP"];
+
+        var div = React.createElement(
+          "ul",
+          null,
+          names.map((el) => React.createElement("li", obj, el))
+        );
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(div);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="superman"></div>
+  </body>
+</html>

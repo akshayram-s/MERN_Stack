@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script>
+      window.onload = function () {
+        var people = [
+          { fname: "Sachin", lname: "Tendulkar" },
+          { fname: "Saurav", lname: "Ganguly" },
+          { fname: "Rahul", lname: "Dravid" },
+        ];
+        let getTable = (arr) => {
+          return React.createElement(
+            "table",
+            { border: 1 },
+            getThead(["fname", "lname"])
+          );
+        };
+        let getTableVal = (arr) => {
+          return React.createElement("table", { border: 1 }, getTbody(arr));
+        };
+
+        let getThead = (headings) => {
+          return React.createElement("thead", null, getTrhead(headings));
+        };
+
+        let getTrhead = (headings) => {
+          return headings.map((el) => React.createElement("th", null, el));
+        };
+
+        let getTbody = (arr) => {
+          return React.createElement("tbody", null, getTrbody(arr));
+        };
+        let getTrbody = (arr) => {
+          return React.createElement(
+            "tr",
+            null,
+            arr.map((el) => {
+              getTd(el);
+            })
+          );
+        };
+        let getTd = (el) => {
+          return React.createElement("td", null, [el.fname, el, lname]);
+        };
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(getTable(people));
+        root.render(getTableVal(people));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>

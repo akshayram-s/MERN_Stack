@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Theme</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var people = [
+          {
+            fname: "Stone",
+            lname: "Walker",
+            email: "abc@gmail.com",
+            mobile: "9876543210",
+            skills: "HTML,CSS",
+          },
+          {
+            fname: "Micheal",
+            lname: "Kong",
+            email: "abcd@gmail.com",
+            mobile: "9876234210",
+            skills: "C,Python",
+          },
+          {
+            fname: "Paul",
+            lname: "Wight",
+            email: "abcde@gmail.com",
+            mobile: "9876535210",
+            skills: "JavaScript",
+          },
+        ];
+
+        var getTable = (arr) => {
+          return (
+            <table border={1}>
+              {getThead(["fname", "lname", "email", "mobile", "skills"])}
+              {getTbody(arr)}
+            </table>
+          );
+        };
+
+        var getThead = (headings) => {
+          return <thead>{getTrhead(headings)}</thead>;
+        };
+
+        var getTrhead = (headings) => {
+          return headings.map((el) => <th>{el}</th>);
+        };
+
+        var getTbody = (data) => {
+          return <tbody>{getTrbody(data)}</tbody>;
+        };
+
+        var getTrbody = (data) => {
+          return data.map((person) => {
+            return (
+              <tr>
+                {getTdbody(person.fname)}
+                {getTdbody(person.lname)}
+                {getTdbody(person.email)}
+                {getTdbody(person.mobile)}
+                {getTdbody(person.skills)}
+              </tr>
+            );
+          });
+        };
+
+        var getTdbody = (data) => {
+          return <td>{data}</td>;
+        };
+
+        var superman = document.getElementById("superman");
+        var root = ReactDOM.createRoot(superman);
+        root.render(getTable(people));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+     
+  </body>
+</html>

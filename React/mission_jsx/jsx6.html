@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>This is Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css" />
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      window.onload = function () {
+        var food = [
+          { image: "", name: "Idli", cost: 10, category: "South Indian" },
+          { image: "", name: "Roti", cost: 30, category: "North Indian" },
+          { image: "", name: "Vada", cost: 5, category: "South Indian" },
+        ];
+        var div = (
+          <div>
+            {food.map((item) => {
+              return (
+                <div className="card" style={{ width: "18rem" }}>
+                  <img
+                    className="card-img-top"
+                    src={item.image}
+                    alt="Card image cap"
+                  ></img>
+                  <div className="card-body">
+                    <h5 className="card-title">Item:{item.name}</h5>
+                    <p className="card-text">cost:{item.cost}</p>
+                    <p className="card-text">category:{item.category}</p>
+                    <a href="#" className="btn btn-primary">
+                      {" "}
+                      Order Now //when one react component creates another
+                      component the created component is called child component
+                      and parent component
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        );
+
+        ReactDOM.render(div, superman);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="superman"></div>
+  </body>
+</html>
