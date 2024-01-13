@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>forEach</title>
+  </head>
+  <body>
+    <script>
+      data = ["Sachin", "Dhoni", "Kohli", "Smith", "Williamson"];
+      function batman(item) {
+        alert(item.toUpperCase());
+      }
+      // Old fashion
+      //   for (val of data) {
+      //     batman(val);
+      // }
+      // new method
+      data.forEach(batman);
+      data.forEach((item) => {
+        console.log(item.toUpperCase());
+      });
+    </script>
+  </body>
+</html>

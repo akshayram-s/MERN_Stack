@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tourism</title>
+    <script src="function.js"></script>
+    <style>
+      #align {
+        height: 30%;
+        width: 100%;
+        background-color: bisque;
+      }
+      button {
+        float: left;
+        width: 25%;
+      }
+      #data {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="align">
+      <button class="header" id="home" onclick="colorchange(event.target)">
+        Home
+      </button>
+      <button id="places" class="header" onclick="colorchange(event.target)">
+        Places
+      </button>
+      <button class="header" id="contact" onclick="colorchange(event.target)">
+        Contact
+      </button>
+      <button class="header" id="about" onclick="colorchange(event.target)">
+        About
+      </button>
+    </div>
+    <div id="data"></div>
+  </body>
+</html>

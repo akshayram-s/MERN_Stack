@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <script>
+      window.onload = function () {
+        var data = ["Sachin", "Sehwag", "Dhoni"];
+        var main = document.getElementById("main");
+        var list = document.createElement("ul");
+        data.forEach((item) => {
+          var li = document.createElement("li");
+          li.innerText = item;
+          list.appendChild(li);
+        });
+        main.appendChild(list);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+</html>

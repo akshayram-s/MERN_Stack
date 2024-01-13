@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closue-2</title>
+  </head>
+  <body>
+    <script>
+      function hello() {
+        var ctr = 0;
+        function count() {
+          alert("hello : " + ++ctr);
+        }
+        return count;
+      }
+      t = hello();
+      t();
+      t();
+      t();
+      t();
+      t();
+    </script>
+  </body>
+</html>

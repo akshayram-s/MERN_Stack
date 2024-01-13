@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scope of variables</title>
+  </head>
+  <body>
+    <script>
+      //global
+      function demo() {
+        alert("I am demo");
+        data = "Welcome";
+        alert(data);
+      }
+      demo();
+      alert(data);
+
+      //To make a variable as local use "var" keyword
+      data2 = "hello";
+      function demo2() {
+        alert("I am demo2");
+        var data2 = "Welcome";
+        alert(data2);
+      }
+      demo2();
+      alert(data2);
+    </script>
+  </body>
+</html>

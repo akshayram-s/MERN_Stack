@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nested Functions</title>
+  </head>
+  <body>
+    <script>
+      function outer() {
+        alert("outside");
+        function inner() {
+          alert("inside");
+        }
+        inner();
+        inner();
+        inner();
+      }
+      outer();
+      inner(); //inner can only be called inside outer function as it is local to outer function
+    </script>
+  </body>
+</html>

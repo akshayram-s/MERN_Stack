@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project JSON</title>
+    <script src="axios.js"></script>
+    <script>
+      function demo() {
+        var main = document.getElementById("main");
+        var req = axios.get("http://127.0.0.1:8080/data2.json");
+        req.then((res) => {
+          var h1 = document.createElement("h1");
+          for (let n of res) {
+            h1.innerText = res.data2[n].fname + " " + res.data2[n].lname;
+            main.appendChild(h1);
+          }
+        });
+        function draw() {
+          var main = document.getElementById("main");
+          var table = document.createElement("table");
+          var tr1 = document.createElement("tr");
+          var th1 = document.createElement("th");
+          th1.onclick = () => {
+            data.sort((a, b) => {
+              if (a.fname == b.fname) {
+                return 0;
+              } else if (a.fname < b.fname) {
+                return 1;
+              }
+              return -1;
+            });
+            draw();
+            main.removeChild(table);
+          };
+          table.setAttribute("border", "2");
+          th1.innerText = "Fname";
+          var th2 = document.createElement("th");
+          th2.onclick = () => {
+            data.sort((a, b) => {
+              if (a.lname == b.lname) {
+                return 0;
+              } else if (a.lname < b.lname) {
+                return -1;
+              }
+              return 1;
+            });
+            draw();
+            main.removeChild(table);
+          };
+          th2.innerText = "Lname";
+          tr1.appendChild(th1);
+          tr1.appendChild(th2);
+          table.appendChild(tr1);
+          for (var name in res.data) {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerHTML = name.fname;
+            tr.appendChild(td1);
+            let td2 = document.createElement("td");
+            td2.innerHTML = name.lname;
+            tr.appendChild(td2);
+            table.appendChild(tr);
+          }
+          main.appendChild(table);
+        }
+      }
+    </script>
+  </head>
+  <body onload="demo()">
+    <div id="main"></div>
+  </body>
+</html>

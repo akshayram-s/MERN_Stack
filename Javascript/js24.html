@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects(Arrow function)</title>
+  </head>
+  <body>
+    <script>
+      function testing() {
+        console.log(this);
+        var obj = {
+          name: "Sachin",
+          age: 18,
+          hi: () => {
+            console.log("Inside hi");
+            console.log(this);
+          },
+        };
+        return obj;
+      }
+      var obj = testing();
+      obj.hi();
+    </script>
+  </body>
+</html>

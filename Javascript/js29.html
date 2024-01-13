@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filtering</title>
+  </head>
+  <body>
+    <script>
+      data = ["Sachin", "Dhoni", "Kohli", "Smith", "Williamson"];
+      // newdata = data.filter((item) => {
+      //   return item.startsWith("S");
+      // });
+      newdata = data.filter((item) => item.startsWith("S"));
+      // if arrow function has only one line with return then no need to give brackets and return keyword
+      alert(newdata);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FORMS-2</title>
+  </head>
+  <script>
+    function test(source) {
+      var value = source.value;
+      var target = document.getElementById(source.id + "target");
+      target.innerText = value;
+    }
+  </script>
+  <body>
+    <input type="text" id="demo1" onkeyup="test(event.target)" />
+    <input type="text" id="demo2" onkeyup="test(event.target)" />
+    <input type="text" id="demo3" onkeyup="test(event.target)" />
+    <h1 id="demo1target"></h1>
+    <h1 id="demo2target"></h1>
+    <h1 id="demo3target"></h1>
+  </body>
+</html>

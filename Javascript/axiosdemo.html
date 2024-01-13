@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <script src="axios.js"></script>
+    <script>
+      function demo() {
+        var main = document.getElementById("main");
+        var req = axios.get("http://127.0.0.1:8080/data.json");
+        req.then((res) => {
+          // var h1 = document.createElement("h1");
+          // h1.innerText = res.data[0].fname + " " + res.data[0].lname;
+          // main.appendChild(h1);
+          for (var i of res.data) {
+            var h1 = document.createElement("h1");
+            h1.innerText = i.fname + " " + i.lname;
+            main.appendChild(h1);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onload="demo()">
+    <div id="main"></div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <script>
+      function demo() {
+        var data = ["Sachin", "Sehwag", "Dhoni"];
+        var main = document.getElementById("main");
+
+        for (var n of data) {
+          var h1 = document.createElement("h1");
+          h1.innerText += "Hello " + n;
+          main.appendChild(h1);
+        }
+      }
+    </script>
+  </head>
+  <body onload="demo()">
+    <div id="main"></div>
+  </body>
+</html>

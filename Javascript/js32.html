@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>undefined in js</title>
+  </head>
+  <body>
+    <script>
+      var people = [
+        { fname: "Sachin", lname: "Tendulkar" },
+        { fname: "Virat", lname: "Kohli" },
+        { fname: "Rahul", lname: "Dravid" },
+        { fname: "MS", lname: "Dhoni" },
+      ];
+      people.sort((a, b) => {
+        if (a.fname == b.fname) return 0;
+        else if (a.fname < b.fname) return -1;
+        return 1;
+      });
+      people.forEach((obj) => {
+        alert(obj.fname + " " + obj.lname);
+      });
+    </script>
+  </body>
+</html>

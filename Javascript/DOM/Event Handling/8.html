@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>This is demo</title>
+    <style>
+      #data {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <form><input type="text" id="name" /></form>
+    <script>
+      names = ["sachin", "sehwag", "ganguly"];
+      var n = document.getElementById("name").value();
+      names.push(n);
+      function demo() {
+        data = "";
+        for (var name of names) {
+          data += "<h1>" + name + "</h1>";
+        }
+        alert(data);
+        document.getElementById("data").innerHTML = data;
+      }
+    </script>
+    <button onclick="demo()">Add</button>
+    <div id="data"></div>
+  </body>
+</html>

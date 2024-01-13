@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //functional programming : passing function as parameter to another function.
+      function hello(a) {
+        alert(typeof a);
+        a();
+      }
+      function test() {
+        alert("Inside test function");
+      }
+      hello(test);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home assignment</title>
+  </head>
+  <body>
+    <script>
+      var products = [
+        {
+          id: 1,
+          name: "t-shirt",
+          category: "fashion",
+          brand: "arrow",
+          cost: 5000,
+          rating: 3,
+        },
+        {
+          id: 2,
+          name: "cricket hand gloves",
+          category: "cricket",
+          brand: "SG",
+          cost: 15000,
+          rating: 5,
+        },
+        {
+          id: 3,
+          name: "cricket bat",
+          category: "cricket",
+          brand: "spartan",
+          cost: 2500,
+          rating: 5,
+        },
+        {
+          id: 4,
+          name: "football",
+          category: "football",
+          brand: "nike",
+          cost: 2500,
+          rating: 3,
+        },
+        {
+          id: 5,
+          name: "football boots",
+          category: "football",
+          brand: "adidas",
+          cost: 15000,
+          rating: 2,
+        },
+        {
+          id: 6,
+          name: "jeans",
+          category: "fashion",
+          brand: "arrow",
+          cost: 2000,
+          rating: 3,
+        },
+        {
+          id: 7,
+          name: "cricket bat",
+          category: "cricket",
+          brand: "SG",
+          cost: 2750,
+          rating: 5,
+        },
+        {
+          id: 8,
+          name: "tshirt",
+          category: "fashion",
+          brand: "levis",
+          cost: 2500,
+          rating: 3,
+        },
+        {
+          id: 9,
+          name: "football",
+          category: "football",
+          brand: "adidas",
+          cost: 2200,
+          rating: 4,
+        },
+      ];
+      ch = prompt(
+        "1)sort by cost low to high" +
+          "\n" +
+          "2)sort by cost high to low" +
+          "\n" +
+          "3)sort by rating" +
+          "\n" +
+          "4)Filter by brand" +
+          "\n" +
+          "5)filter by category" +
+          "\n" +
+          "6)filter by name"
+      );
+      switch (Number(ch)) {
+        case 1:
+          products.sort((a, b) => {
+            if (a.cost == b.cost) return 0;
+            else if (a.cost < b.cost) return -1;
+            return 1;
+          });
+          products.forEach((obj) => {
+            console.log(
+              obj.id +
+                " " +
+                obj.name +
+                " " +
+                obj.category +
+                " " +
+                obj.brand +
+                " " +
+                obj.cost +
+                " " +
+                obj.rating
+            );
+          });
+          break;
+        case 2:
+          products.sort((a, b) => {
+            if (a.cost == b.cost) return 0;
+            else if (a.cost < b.cost) return 1;
+            return -1;
+          });
+          products.forEach((obj) => {
+            console.log(
+              obj.id +
+                " " +
+                obj.name +
+                " " +
+                obj.category +
+                " " +
+                obj.brand +
+                " " +
+                obj.cost +
+                " " +
+                obj.rating
+            );
+          });
+          break;
+        case 3:
+          products.sort((a, b) => {
+            if (a.rating == b.rating) return 0;
+            else if (a.rating < b.rating) return 1;
+            return -1;
+          });
+          products.forEach((obj) => {
+            console.log(
+              obj.id +
+                " " +
+                obj.name +
+                " " +
+                obj.category +
+                " " +
+                obj.brand +
+                " " +
+                obj.cost +
+                " " +
+                obj.rating
+            );
+          });
+          break;
+        case 4:
+          name = prompt("Enter brand name:");
+          newData = products.filter((item) => item.brand.includes(name));
+          console.log(newData);
+          break;
+        case 5:
+          name = prompt("Enter category name:");
+          newData = products.filter((item) => item.category.includes(name));
+          console.log(newData);
+          break;
+        case 6:
+          name = prompt("Enter product name:");
+          newData = products.filter((item) => item.name.includes(name));
+          console.log(newData);
+          break;
+        default:
+          alert("Invalid option");
+      }
+      /* 1 sort cost low to high
+      2 sort price high to low
+      3 sort by rating
+      4 filter by brand
+      5 filter by category
+      6 filter by name
+      if users chooses to filter show second prompt:Enter brand or enter category or enter name */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anonymous Functions</title>
+  </head>
+  <body>
+    <script>
+      // (function (name1) {
+      //   alert("Hi " + name1 + " , I am anonymous");
+      // })("Dhoni");
+      //functional programming using anonymous function
+      function hello(a) {
+        alert(typeof a);
+        a();
+      }
+      hello(function () {
+        alert("Inside function");
+      });
+      hello(() => {
+        alert("Inside function");
+      });
+      hello(test);
+    </script>
+  </body>
+</html>

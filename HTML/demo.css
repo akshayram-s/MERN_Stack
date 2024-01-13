@@ -1,0 +1,19 @@
+.c1{
+	color:blue;
+	background-color:red;
+	font-size:80px;
+	text-align:center
+}
+.c2{
+	color:red;
+	background-color:blue;
+	font-size:80px;
+	text-align:center
+}
+#batman{
+	color:Black;
+	
+	font-size:80px;
+	text-align:center;
+background-image:radial-gradient(cyan,white,magenta)
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table sorting</title>
+    <script>
+      var products = [
+        {
+          name: "Football",
+          category: "Sports",
+          brand: "Adidas",
+          rating: 4,
+          cost: 2000,
+        },
+        {
+          name: "Cricket",
+          category: "Sports",
+          brand: "SG",
+          rating: 5,
+          cost: 3500,
+        },
+        {
+          name: "T-Shirt",
+          category: "Fashion",
+          brand: "USPA",
+          rating: 2,
+          cost: 1000,
+        },
+        {
+          name: "Jeans",
+          category: "Fashion",
+          brand: "Levis",
+          rating: 5,
+          cost: 1200,
+        },
+        {
+          name: "Football boots",
+          category: "Sports",
+          brand: "Nike",
+          rating: 3,
+          cost: 1300,
+        },
+        {
+          name: "T-Shirts",
+          category: "Fashion",
+          brand: "Levis",
+          rating: 2,
+          cost: 700,
+        },
+      ];
+      function sortAsc() {}
+    </script>
+  </head>
+  <body>
+    <!-- 1)fname sorting ascending and descending
+    2) lname sorting ascending and descending single click sort in ascending double click sort in descending-->
+    <table align="center" border="2" style="width: 50%" padding="10px">
+      <tr>
+        <th onclick="sortASC()" ondblclick="sortDESC()"><b>Name</b></th>
+        <th onclick="sortASC()" ondblclick="sortDESC()"><b>Category</b></th>
+        <th onclick="sortASC()" ondblclick="sortDESC()"><b>Brand</b></th>
+        <th onclick="sortASC()" ondblclick="sortDESC()"><b>Rating</b></th>
+        <th onclick="sortASC()" ondblclick="sortDESC()"><b>Cost</b></th>
+      </tr>
+      <tr>
+        <td>Football</td>
+        <td>Sports</td>
+        <td>Adidas</td>
+        <td>4</td>
+        <td>2000</td>
+      </tr>
+      <tr>
+        <td>Cricket Bat</td>
+        <td>Sports</td>
+        <td>SG</td>
+        <td>5</td>
+        <td>3500</td>
+      </tr>
+      <tr>
+        <td>T-Shirt</td>
+        <td>Fashion</td>
+        <td>USPA</td>
+        <td>2</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>Jeans</td>
+        <td>Fashion</td>
+        <td>Levis</td>
+        <td>5</td>
+        <td>1200</td>
+      </tr>
+      <tr>
+        <td>Football boots</td>
+        <td>Sports</td>
+        <td>Nike</td>
+        <td>3</td>
+        <td>1300</td>
+      </tr>
+      <tr>
+        <td>T-Shirt</td>
+        <td>Fashion</td>
+        <td>Levis</td>
+        <td>2</td>
+        <td>700</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorting-2</title>
+  </head>
+  <body>
+    <script>
+      var people = [
+        { fname: "Sachin", lname: "Tendulkar" },
+        { fname: "Virat", lname: "Kohli" },
+        { fname: "Rahul", lname: "Dravid" },
+        { fname: "MS", lname: "Dhoni" },
+      ];
+      alert("Enter a choice:");
+      ch = prompt(
+        "1)Sort by fname in ascending" +
+          "\n" +
+          "2)Sort by fname in descending" +
+          "\n" +
+          "3)Sort by lname in ascending" +
+          "\n" +
+          "4)Sort by lname in descending"
+      );
+      switch (Number(ch)) {
+        case 1:
+          people.sort((a, b) => {
+            if (a.fname == b.fname) return 0;
+            else if (a.fname < b.fname) return -1;
+            return 1;
+          });
+          break;
+        case 2:
+          people.sort((a, b) => {
+            if (a.fname == b.fname) return 0;
+            else if (a.fname < b.fname) return 1;
+            return -1;
+          });
+          break;
+        case 3:
+          people.sort((a, b) => {
+            if (a.fname == b.fname) return 0;
+            else if (a.fname < b.fname) return -1;
+            return 1;
+          });
+          break;
+        case 4:
+          people.sort((a, b) => {
+            if (a.lname == b.lname) return 0;
+            else if (a.fname < b.fname) return 1;
+            return -1;
+          });
+          break;
+        default:
+          alert("Invalid option");
+      }
+      people.forEach((obj) => {
+        alert(obj.fname + " " + obj.lname);
+      });
+    </script>
+  </body>
+</html>

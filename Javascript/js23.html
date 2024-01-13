@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Objects - 2</title>
+  </head>
+  <body>
+    <script>
+      function demo() {
+        alert("Hello Universe");
+      }
+      var arr = [
+        () => {
+          alert("Hello World");
+        },
+        function () {
+          alert("Hello Galaxy");
+        },
+        demo,
+      ];
+      arr[0]();
+      arr[1]();
+      arr[2]();
+      var obj = {
+        name: "Sachin",
+        age: 18,
+        hi: function () {
+          alert("Inside Function");
+          console.log(this.name, this.age);
+        },
+      };
+      //this keyword will not work in arrow function,if used it will give result as undefined.
+      console.log(obj.name, obj.age);
+      obj.hi();
+    </script>
+  </body>
+</html>

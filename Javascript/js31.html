@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorting</title>
+  </head>
+  <body>
+    <script>
+      data = ["Sachin", "Dhoni", "Kohli", "Smith", "Williamson"];
+      data.sort();
+      alert(data);
+      //By default JS supports only string sorting
+      arr = [2, 100, 30, 56, 76, 68];
+      arr.sort((a, b) => {
+        if (a == b) {
+          return 0;
+        } else if (a < b) {
+          return -1;
+        }
+        return 1;
+      });
+      alert(arr);
+    </script>
+  </body>
+</html>

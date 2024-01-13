@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>This is demo</title>
+    <style>
+      #data {
+        font-size: 30px;
+      }
+    </style>
+    <script>
+      names = [
+        { fname: "sachin", lname: "tendulkar" },
+        { fname: "sourav", lname: "ganguly" },
+      ];
+      data = "<table>";
+      data += "<tr><th>Fname</th><th>Lname</th></tr>";
+      function demo() {
+        for (var name of names) {
+          data =
+            data +
+            "<tr><td>" +
+            name.fname +
+            "</td>" +
+            "<td>" +
+            name.lname +
+            "</td></tr>";
+        }
+        data += "</table>";
+        alert(data);
+        document.getElementById("data").innerHTML = data;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="demo()">Click</button>
+    <div id="data"></div>
+  </body>
+</html>

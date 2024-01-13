@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scope with nested function</title>
+  </head>
+  <body>
+    <script>
+      //LEXICAL SCOPING: nested function can read local variable of outer function
+      function outer() {
+        alert("I am outer function");
+        var data = "Hello";
+        alert(data);
+        var inner = () => {
+          alert("I am inner function");
+          alert(data);
+        };
+        inner();
+      }
+      outer();
+    </script>
+  </body>
+</html>

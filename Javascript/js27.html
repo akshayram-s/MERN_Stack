@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array functions</title>
+  </head>
+  <body>
+    <script>
+      data = ["Sachin", "Dhoni", "Virat", "Rahul", "Dhoni"];
+      console.log(data.indexOf("Dhoni"));
+      console.log(data.lastIndexOf("Dhoni"));
+      console.log(data.slice(2, 5));
+      console.log(data.includes("Sachin"));
+      data.push("Hussey");
+      alert(data);
+      alert("Removing " + data.pop());
+      data.unshift("Ponting");
+      alert(data);
+      alert("Removing " + data.shift());
+      alert(data);
+      alert("Removing by splicing: " + data.splice(0, 2));
+      alert(data);
+      alert("Adding using splicing");
+      data.splice(1, 0, "KDB", "Modric");
+      alert(data);
+      alert("Replacing");
+      data.splice(1, 2, "Cook", "Smith");
+      alert(data);
+    </script>
+  </body>
+</html>

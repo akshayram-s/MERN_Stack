@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array of objects</title>
+  </head>
+  <body>
+    <script>
+      console.log("Array of objects:");
+      var objarr = [
+        { fname: "Sachin", lname: "Tendulkar" },
+        { fname: "Rahul", lname: "Dravid" },
+        { fname: "Yuvraj", lname: "Singh" },
+      ];
+      for (data of objarr) {
+        alert(data.fname + " " + data.lname);
+      }
+      //data contains first element in first iteration,second element in second iteration and so on...
+      console.log(objarr[0].fname + " " + objarr[0].lname);
+      console.log(objarr[1].fname + " " + objarr[1].lname);
+      console.log(objarr[2].fname + " " + objarr[2].lname);
+    </script>
+  </body>
+</html>

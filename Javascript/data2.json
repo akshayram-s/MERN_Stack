@@ -1,0 +1,15 @@
+[
+  { "question": "What is the capital of India?", "answer": "New Delhi" },
+  {
+    "question": "What is Abstraction?",
+    "answer": "Hiding unnecessary details and showing only the essential details"
+  },
+  {
+    "question": "What is a Linked List?",
+    "answer": "Linked List is a linear data structure where one node is linked to other node"
+  },
+  {
+    "question": "When was netern launched",
+    "answer": "2023"
+  }
+]

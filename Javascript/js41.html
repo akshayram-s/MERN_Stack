@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SPREAD OPERATOR</title>
+    <script>
+      //spread operator
+      var obj = {
+        fname: "Sachin",
+        lname: "Tendulkar",
+      };
+      var newObj = { ...obj };
+      newObj.fname = "Arjun";
+      alert(obj.fname);
+      alert(newObj.fname);
+      //newObj and obj are referring to different position
+      //changes made in newObj is not reflected in obj
+    </script>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+</html>
